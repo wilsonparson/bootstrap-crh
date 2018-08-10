@@ -1,0 +1,61 @@
+// Primary colour palette
+$crh-blue-dark: #041E42;
+$crh-blue-medium: #005EB8;
+$crh-black: #000;
+$crh-white: #FFF;
+
+// Secondary colour palette
+$crh-violet-dark: #512D6D;      // Pantone 269
+$crh-violet-bright: #9B26B6;    // Pantone 2592
+
+$crh-red-dark: #861F41;         // Pantone 208
+$crh-red-bright: #D50032;       // Pantone 199
+
+$crh-orange-dark: #73381D;      // Pantone 168
+$crh-orange-bright: #FF6a13;    // Pantone 1585
+
+$crh-green-dark: #546223;       // Pantone 371
+$crh-green-bright: #78BE20;     // Pantone 368
+
+$crh-teal-dark: #007681;        // Pantone 7474
+$crh-teal-bright: #00B0B9;      // Pantone 7466
+
+$crh-grey-dark: #53565A;        // Pantone Cool Grey 11
+$crh-grey-light: #B1B3B3;       // Pantone Cool Grey 5
+
+/*
+Add colors to Bootstrap theme colors map to generate Bootstrap classes (e.g., .btn-crh-blue-dark,
+.text-crh-grey-dark).
+*/
+$theme-colors: (
+    "crh-blue-dark": $crh-blue-dark,
+    "crh-blue-medium": $crh-blue-medium,
+    "crh-black": $crh-black,
+    "crh-violet-dark": $crh-violet-dark,
+    "crh-violet-bright": $crh-violet-bright,
+    "crh-red-dark": $crh-red-dark,
+    "crh-red-bright": $crh-red-bright,
+    "crh-orange-dark": $crh-orange-dark,
+    "crh-orange-bright": $crh-orange-bright,
+    "crh-green-dark": $crh-green-dark,
+    "crh-green-bright": $crh-green-bright,
+    "crh-teal-dark": $crh-teal-dark,
+    "crh-teal-bright": $crh-teal-bright,
+    "crh-grey-dark": $crh-grey-dark,
+    "crh-grey-light": $crh-grey-light,
+    
+    // Override Bootstrap default theme colors with CRH colors
+    "primary": $crh-blue-medium,
+    "secondary": $crh-grey-light,
+    "success": $crh-green-bright,
+    "danger": $crh-red-bright,
+    "warning": $crh-orange-bright,
+    "info": $crh-teal-dark,
+    "dark": $crh-grey-dark
+);
+
+/*
+Some CRH theme colors are lighter than Bootstrap default theme colors, which automatically changes
+foreground text to dark. Bootstrap's default threshold is 150.
+*/
+$yiq-contrasted-threshold: 180;
