@@ -1,35 +1,940 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Twitter Bootstrap CRH Branding</title>
+    <title>Bootstrap CRH</title>
     <link rel="stylesheet" href="crh.css">
+    <style>
+        .header {
+            padding-top: 40px;
+            padding-bottom: 20px;
+            border-bottom: solid 1px var(--crh-grey-light);
+        }
+
+        .card {
+            margin: 20px 0;
+        }
+
+        .card-text code {
+            display: block;
+        }
+
+        .card-img-top {
+            height: 150px;
+        }
+
+        section {
+            padding-top: 20px;
+        }
+
+        pre code {
+            color: #e83e8c;
+        }
+
+        .outline-buttons {
+            margin-top: 20px;
+        }
+
+        .progress {
+            margin: 10px 0;
+        }
+
+        .crh-logo {
+            width: 150px;
+            height: 150px;
+            margin: 0 30px 20px 0;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container">
-        <section id="typography">
-            <h1>Typography</h1>
-                <h2>Display fonts</h2>
-                    <h2 class="display-1">Display 1</h2>
-                    <p><strong>Note:</strong> Use this font only for large vertical headings.</p>
-                    <h2 class="display-2">Display 2</h2>
-                    <h2 class="display-3">Display 3</h2>
-                    <h2 class="display-4">Display 4</h2>
-            <h2>Headings</h2>
-                <h2 class="h1">Heading 1</h2>
-                <h2 class="h2">Heading 2</h2>
-                <h2 class="h3">Heading 3</h2>
-                <h2 class="h4">Heading 4</h2>
-                <h2 class="h5">Heading 5</h2>
-                <h2 class="h6">Heading 6</h2>
-                <p class="lead text-primary">Intro copy Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo omnis maiores iure deserunt, sint mollitia unde, aliquam ad nisi cupiditate sed! Odit nemo ea veniam. Sit accusantium velit id illo. </p>
+    <header class="container header">
+        <div class="d-flex flex-column flex-sm-row align-items-center">
+            <img class="crh-logo" src="crh-logo-full-colour-rgb.png" alt="CRH full color logo">
+            <h1 class="display-2 text-crh-blue-dark">Bootstrap CRH</h1>
+        </div>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, assumenda commodi dolores ad adipisci perferendis
+            voluptate unde harum aliquam non. Optio accusamus, alias voluptatum nesciunt omnis quibusdam ipsa neque non?</p>
+    </header>
+    <section id="color" class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-3">Color</h1>
+            </div>
+        </div>
+        <section id="bootstrap-theme-classes" class="row">
+            <div class="col-12">
+                <h2 class="display-4">Bootstrap's Theme Classes</h2>
+                <p>Bootstrap provides a number of theme classes, allowing developers to style elements according to a theme
+                    palette. I have extended these theme classes to include CRH colors, and have also overridden Bootstrap's
+                    default theme colors with appropriate CRH colors (see
+                    <a href="#bootstrap-theme-colors">CRH-based Bootstrap Theme Colors</a>).</p>
+                <p>In this document, all asterisks in CSS class names (e.g.,
+                    <code>.*-crh-blue-dark</code>) are merely placeholders representing the beginning of the Bootstrap theme class names (see examples
+                    below). To maintain consistency, use the theme class names wherever possible. If you need to apply colors
+                    using CSS, use the CSS variable names (e.g.,
+                    <code>var(--crh-blue-dark)</code>).
+                </p>
+                <h3>Examples</h3>
+                <p>While some of the examples below use the CRH-based theme class names directly, it is recommended to use the
+                    overridden Bootstrap theme class names (e.g.,
+                    <code>.btn-primary</code>) where possible.</p>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Target of Style</th>
+                                <th>Example</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">Text</td>
+                                <td>
+                                    <code>.text-primary</code>
+                                </td>
+                                <td>
+                                    <span class="text-primary">This text has the primary color.</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <code>.text-crh-red-dark</code>
+                                </td>
+                                <td>
+                                    <span class="text-crh-green-dark">This text has the CRH Dark Green color.</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Background</td>
+                                <td>
+                                    <code>.bg-crh-blue-medium</code>
+                                </td>
+                                <td class="bg-crh-blue-medium">I have a blue background.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <code>.bg-warning</code>
+                                </td>
+                                <td class="bg-warning">I have a warning background.</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">Button</td>
+                                <td>
+                                    <code>.btn-crh-violet-dark</code>
+                                </td>
+                                <td>
+                                    <button class="btn btn-crh-violet-dark">Dark Violet Button</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <code>.btn-danger</code>
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger">Danger Button</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <code>.btn-outline-crh-teal-dark </code>
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-crh-teal-dark">Dark Teal Outline Button</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Alert</td>
+                                <td>
+                                    <code>.alert-success</code>
+                                </td>
+                                <td>
+                                    <div class="alert alert-success">Success!</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <code>.alert-crh-orange-bright</code>
+                                </td>
+                                <td>
+                                    <div class="alert alert-crh-orange-bright">Success!</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Badge</td>
+                                <td>
+                                    <code>.badge-crh-black</code>
+                                </td>
+                                <td>
+                                    <span class="badge badge-crh-black">Black badge</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <code>.badge-warning</code>
+                                </td>
+                                <td>
+                                    <span class="badge badge-warning">Warning badge</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
         </section>
-        <hr>
-        <section id="color">
-            <h1>Color</h1>
+        <section id="primary-color-palette" class="row">
+            <div class="col-12">
+                <h2 class="display-4">CRH Primary Color Palette</h2>
+                <p>The primary colour palette consists of dark and medium blue. Our primary blues are our most important colours
+                    and are used in the full color logo.</p>
+                <p>Black is used for the logo when colours are limited.</p>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-crh-blue-dark"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Dark Blue</h3>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Theme class suffix</dt>
+                                <dd>
+                                    <code>.*-crh-blue-dark</code>
+                                </dd>
+                                <dt>CSS variable name</dt>
+                                <dd>
+                                    <code>--crh-blue-dark</code>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-crh-blue-medium"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Medium Blue</h3>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Theme class suffix</dt>
+                                <dd>
+                                    <code>.*-crh-blue-medium</code>
+                                </dd>
+                                <dt>CSS variable name</dt>
+                                <dd>
+                                    <code>--crh-blue-medium</code>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-crh-black"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Black</h3>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Theme class suffix</dt>
+                                <dd>
+                                    <code>.*-crh-black</code>
+                                </dd>
+                                <dt>CSS variable name</dt>
+                                <dd>
+                                    <code>--crh-black</code>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-crh-white"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">White</h3>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Theme class suffix</dt>
+                                <dd>
+                                    <code>.*-crh-white</code>
+                                </dd>
+                                <dt>CSS variable name</dt>
+                                <dd>
+                                    <code>--crh-white</code>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-    </div>
+        <section id="secondary-color-palette" class="row">
+            <div class="col-12">
+                <h2 class="display-4">CRH Secondary Color Palette</h2>
+                <p>This palette comprises six pairs of supporting colors to reflect the pair of primary blues. They can be used
+                    to highlight text and to colour graphs and charts. Tints of these colours may also be used.</p>
+                <p>The use of any colors other than our primary or secondary colours is not permitted.</p>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-crh-violet-dark"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Dark Violet</h3>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Theme class suffix</dt>
+                                <dd>
+                                    <code>.*-crh-violet-dark</code>
+                                </dd>
+                                <dt>CSS variable name</dt>
+                                <dd>
+                                    <code>--crh-violet-dark</code>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-crh-violet-bright"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Bright Violet</h3>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Theme class suffix</dt>
+                                <dd>
+                                    <code>*-crh-violet-bright</code>
+                                </dd>
+                                <dt>CSS variable name</dt>
+                                <dd>
+                                    <code>--crh-violet-bright</code>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-crh-red-dark"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Dark Red</h3>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Theme class suffix</dt>
+                                <dd>
+                                    <code>.*-crh-red-dark</code>
+                                </dd>
+                                <dt>CSS variable name</dt>
+                                <dd>
+                                    <code>--crh-red-dark</code>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-crh-red-bright"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Bright Red</h3>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Theme class suffix</dt>
+                                <dd>
+                                    <code>.*-crh-red-bright</code>
+                                </dd>
+                                <dt>CSS variable name</dt>
+                                <dd>
+                                    <code>--crh-red-bright</code>
+                                </dd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-crh-orange-dark"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Dark Orange</h3>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Theme class suffix</dt>
+                                <dd>
+                                    <code>.*-crh-orange-dark</code>
+                                </dd>
+                                <dt>CSS variable name</dt>
+                                <dd>
+                                    <code>--crh-orange-dark</code>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-crh-orange-bright"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Bright Orange</h3>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Theme class suffix</dt>
+                                <dd>
+                                    <code>.*-crh-orange-bright</code>
+                                </dd>
+                                <dt>CSS variable name</dt>
+                                <dd>
+                                    <code>--crh-orange-bright</code>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-crh-green-dark"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Dark Green</h3>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Theme class suffix</dt>
+                                <dd>
+                                    <code>.*-crh-green-dark</code>
+                                </dd>
+                                <dt>CSS variable name</dt>
+                                <dd>
+                                    <code>--crh-green-dark</code>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-crh-green-bright"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Bright Green</h3>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Theme class suffix</dt>
+                                <dd>
+                                    <code>.*-crh-green-bright</code>
+                                </dd>
+                                <dt>CSS variable name</dt>
+                                <dd>
+                                    <code>--crh-green-bright</code>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-crh-teal-dark"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Dark Teal</h3>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Theme class suffix</dt>
+                                <dd>
+                                    <code>.*-crh-teal-dark</code>
+                                </dd>
+                                <dt>CSS variable name</dt>
+                                <dd>
+                                    <code>--crh-teal-dark</code>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-crh-teal-bright"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Bright Teal</h3>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Theme class suffix</dt>
+                                <dd>
+                                    <code>.*-crh-teal-bright</code>
+                                </dd>
+                                <dt>CSS variable name</dt>
+                                <dd>
+                                    <code>--crh-teal-bright</code>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-crh-grey-dark"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Dark Grey</h3>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Theme class suffix</dt>
+                                <dd>
+                                    <code>.*-crh-grey-dark</code>
+                                </dd>
+                                <dt>CSS variable name</dt>
+                                <dd>
+                                    <code>--crh-grey-dark</code>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-crh-grey-light"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Light Grey</h3>
+                        <div class="card-text">
+                            <dl>
+                                <dt>Theme class suffix</dt>
+                                <dd>
+                                    <code>.*-crh-grey-light</code>
+                                </dd>
+                                <dt>CSS variable name</dt>
+                                <dd>
+                                    <code>--crh-grey-light</code>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="bootstrap-theme-colors" class="row">
+            <div class="col-12">
+                <h2 class="display-4">CRH-based Bootstrap Theme Colors</h2>
+                <p>I have selected colors from CRH's primary and secondary color palettes that most closely match the Bootstrap
+                    theme colors, and have replaced the Bootstrap theme colors with the CRH equivalents (with the exception
+                    of the
+                    <b>dark</b> and
+                    <b>light</b> themes). This allows the developer to use bootstrap's default theme classes while adhering
+                    to the CRH style guide.</p>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-primary"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Primary</h3>
+                        <div class="card-text">
+                            <code>.*-primary</code>
+                            <code>.*-crh-blue-medium</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-secondary"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Secondary</h3>
+                        <div class="card-text">
+                            <code>.*-secondary</code>
+                            <code>.*-crh-grey-light</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-success"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Success</h3>
+                        <div class="card-text">
+                            <code>.*-success</code>
+                            <code>.*-crh-green-bright</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-danger"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Danger</h3>
+                        <div class="card-text">
+                            <code>.*-danger</code>
+                            <code>.*-crh-red-bright</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-warning"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Warning</h3>
+                        <div class="card-text">
+                            <code>.*-warning</code>
+                            <code>.*-crh-orange-bright</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-info"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Info</h3>
+                        <div class="card-text">
+                            <code>.*-info</code>
+                            <code>.*-crh-teal-dark</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-dark"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Dark</h3>
+                        <div class="card-text">
+                            <code>.*-dark</code>
+                            <span class="text-muted">(Bootstrap default)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card">
+                    <div class="card-img-top bg-light"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Light</h3>
+                        <div class="card-text">
+                            <code>.*-light</code>
+                            <span class="text-muted">(Bootstrap default)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </section>
+    <hr>
+    <section id="ui-elements" class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-3">UI Elements</h1>
+                <p>Styling of UI elements is unchanged from Bootstrap's default styles. The only difference is that the elements
+                    use CRH's theme colors, rather than the default Bootstrap theme colors, because the theme colors have
+                    been overridden (see
+                    <a href="#bootstrap-theme-colors">Bootstrap Theme Colors</a> above). Therefore, not all Bootstrap UI elements are included in this demo&mdash;only
+                    the ones that appear differently because of the theme change. To see the other UI elements that are available
+                    in this package, see
+                    <a href="https://getbootstrap.com/docs/4.1/components/alerts/">Bootstrap Components</a>.</p>
+            </div>
+        </div>
+        <section id="alerts" class="row">
+            <div class="col-12">
+                <h2 class="display-4">Alerts</h2>
+                <pre>
+<code>
+&lt;div class="alert alert-primary" role="alert"&gt;
+    A simple primary alert—check it out!
+&lt;/div&gt;
+</code>
+</pre>
+            </div>
+            <div class="col-12">
+                <div class="alert alert-primary" role="alert">
+                    A simple primary alert—check it out!
+                </div>
+                <div class="alert alert-secondary" role="alert">
+                    A simple secondary alert—check it out!
+                </div>
+                <div class="alert alert-success" role="alert">
+                    A simple success alert—check it out!
+                </div>
+                <div class="alert alert-danger" role="alert">
+                    A simple danger alert—check it out!
+                </div>
+                <div class="alert alert-warning" role="alert">
+                    A simple warning alert—check it out!
+                </div>
+                <div class="alert alert-info" role="alert">
+                    A simple info alert—check it out!
+                </div>
+                <div class="alert alert-light" role="alert">
+                    A simple light alert—check it out!
+                </div>
+                <div class="alert alert-dark" role="alert">
+                    A simple dark alert—check it out!
+                </div>
+            </div>
+        </section>
+        <section id="badges" class="row">
+            <div class="col-12">
+                <h2 class="display-4">Badges</h2>
+                <pre>
+<code>
+&lt;span class="badge badge-primary"&gt;Primary&lt;/span&gt;
+</code>
+</pre>
+            </div>
+            <div class="col-12">
+                <span class="badge badge-primary">Primary</span>
+                <span class="badge badge-secondary">Secondary</span>
+                <span class="badge badge-success">Success</span>
+                <span class="badge badge-danger">Danger</span>
+                <span class="badge badge-warning">Warning</span>
+                <span class="badge badge-info">Info</span>
+                <span class="badge badge-light">Light</span>
+                <span class="badge badge-dark">Dark</span>
+            </div>
+        </section>
+        <section id="buttons" class="row">
+            <div class="col-12">
+                <h2 class="display-4">Buttons</h2>
+                <pre>
+<code>
+&lt;button type="button" class="btn btn-primary"&gt;Primary&lt;/button&gt;
+</code>
+</pre>
+            </div>
+            <div class="col-12">
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-secondary">Secondary</button>
+                <button type="button" class="btn btn-success">Success</button>
+                <button type="button" class="btn btn-danger">Danger</button>
+                <button type="button" class="btn btn-warning">Warning</button>
+                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="btn btn-light">Light</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-link">Link</button>
+            </div>
+            <div class="col-12 outline-buttons">
+                <button type="button" class="btn btn-outline-primary">Primary</button>
+                <button type="button" class="btn btn-outline-secondary">Secondary</button>
+                <button type="button" class="btn btn-outline-success">Success</button>
+                <button type="button" class="btn btn-outline-danger">Danger</button>
+                <button type="button" class="btn btn-outline-warning">Warning</button>
+                <button type="button" class="btn btn-outline-info">Info</button>
+                <button type="button" class="btn btn-outline-light">Light</button>
+                <button type="button" class="btn btn-outline-dark">Dark</button>
+            </div>
+        </section>
+        <section id="progress-bars" class="row">
+            <div class="col-12">
+                <h2 class="display-4">Progress Bars</h2>
+                <pre>
+<code>
+&lt;div class="progress"&gt;
+    &lt;div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+            </div>
+            <div class="col-12">
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <hr>
+    <section id="typography" class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-3">Typography</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Display 1</h2>
+                    </div>
+                    <div class="card-body">
+                        <span class="display-1">Display 1</h2>
+                    </div>
+                    <div class="card-footer">
+                        <p>
+                            <code>.display-1</code>
+                        </p>
+                        <p class="text-muted">
+                            <strong>Note:</strong> Use this font only for large vertical headings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Display 2</h2>
+                    </div>
+                    <div class="card-body">
+                        <span class="display-2">Display 2</span>
+                    </div>
+                    <div class="card-footer">
+                        <p>
+                            <code>.display-2</code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Display 3</h2>
+                    </div>
+                    <div class="card-body">
+                        <span class="display-3">Display 3</span>
+                    </div>
+                    <div class="card-footer">
+                        <p>
+                            <code>.display-3</code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Display 4</h2>
+                    </div>
+                    <div class="card-body">
+                        <span class="display-4">Display 4</span>
+                    </div>
+                    <div class="card-footer">
+                        <p>
+                            <code>.display-4</code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Heading 1</h2>
+                    </div>
+                    <div class="card-body">
+                        <span class="h1">Heading 1</span>
+                    </div>
+                    <div class="card-footer">
+                        <p>
+                            <code>&lt;h1&gt;</code> or
+                            <code>.h1</code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Heading 2</h2>
+                    </div>
+                    <div class="card-body">
+                        <span class="h2">Heading 2</span>
+                    </div>
+                    <div class="card-footer">
+                        <p>
+                            <code>&lt;h2&gt;</code> or
+                            <code>.h2</code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Heading 3</h2>
+                    </div>
+                    <div class="card-body">
+                        <span class="h3">Heading 3</span>
+                    </div>
+                    <div class="card-footer">
+                        <p>
+                            <code>&lt;h3&gt;</code> or
+                            <code>.h3</code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Heading 4</h2>
+                    </div>
+                    <div class="card-body">
+                        <span class="h4">Heading 4</span>
+                    </div>
+                    <div class="card-footer">
+                        <p>
+                            <code>&lt;h4&gt;</code> or
+                            <code>.h4</code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Heading 5</h2>
+                    </div>
+                    <div class="card-body">
+                        <span class="h5">Heading 5</span>
+                    </div>
+                    <div class="card-footer">
+                        <p>
+                            <code>&lt;h5&gt;</code> or
+                            <code>.h5</code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Heading 6</h2>
+                    </div>
+                    <div class="card-body">
+                        <span class="h6">Heading 6</span>
+                    </div>
+                    <div class="card-footer">
+                        <p>
+                            <code>&lt;h6&gt;</code> or
+                            <code>.h6</code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="lead text-primary">Intro copy Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo omnis maiores iure deserunt, sint mollitia
+            unde, aliquam ad nisi cupiditate sed! Odit nemo ea veniam. Sit accusantium velit id illo. </p>
+    </section>
 </body>
+
 </html>
