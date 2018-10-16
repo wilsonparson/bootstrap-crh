@@ -23,10 +23,8 @@ $crh-teal-bright: #00B0B9;      // Pantone 7466
 $crh-grey-dark: #53565A;        // Pantone Cool Grey 11
 $crh-grey-light: #B1B3B3;       // Pantone Cool Grey 5
 
-/*
-Add colors to Bootstrap theme colors map to generate Bootstrap classes (e.g., .btn-crh-blue-dark,
-.text-crh-grey-dark).
-*/
+// Add colors to Bootstrap theme colors map to generate Bootstrap classes (e.g., .btn-crh-blue-dark,
+// .text-crh-grey-dark).
 $theme-colors: (
     "crh-blue-dark": $crh-blue-dark,
     "crh-blue-medium": $crh-blue-medium,
@@ -53,8 +51,6 @@ $theme-colors: (
     "info": $crh-teal-dark
 );
 
-/*
-Some CRH theme colors are lighter than Bootstrap default theme colors, which automatically changes
-foreground text to dark. Bootstrap's default threshold is 150.
-*/
+// Some CRH theme colors are lighter than Bootstrap default theme colors, which automatically
+// changes foreground text to dark. Bootstrap's default threshold is 150.
 $yiq-contrasted-threshold: 180;

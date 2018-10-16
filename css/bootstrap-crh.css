@@ -1,12 +1,4 @@
 @charset "UTF-8";
-/*
-Add colors to Bootstrap theme colors map to generate Bootstrap classes (e.g., .btn-crh-blue-dark,
-.text-crh-grey-dark).
-*/
-/*
-Some CRH theme colors are lighter than Bootstrap default theme colors, which automatically changes
-foreground text to dark. Bootstrap's default threshold is 150.
-*/
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -10524,4 +10516,4 @@ h3 {
   }
 }
 
-/*# sourceMappingURL=crh.css.map */
+/*# sourceMappingURL=bootstrap-crh.css.map */
